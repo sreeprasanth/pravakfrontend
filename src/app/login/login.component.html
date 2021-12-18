@@ -1,0 +1,57 @@
+<!-- <form class="form " #userlogin="ngForm"  (ngSubmit)="userVerify()">
+    
+    <div class="form-group" style="font-weight: bold;color: white;">
+
+        <label for="email">Enter your registered user name</label>
+        <input type="email" class="form-control" name="username" [(ngModel)]="user.usname" pattern="[a-z]{5}" required>
+
+    </div>
+<br>
+
+<div class="form-group" style="font-weight: bold;color: white;">
+  
+    <label for="password">Password</label>
+    <input type="password" class="form-control" name="password" [(ngModel)]="user.password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}"  required>
+ 
+</div>
+
+<br>
+<div style="text-align: center;">
+<button class="btn btn-primary" [disabled]="userlogin.form.invalid">Login</button>
+</div>
+</form> -->
+<div class="card-header">
+    <h3>Sign up</h3>
+    </div>
+    
+    
+    <div class="card-body">
+    
+    <form class="form col-md-6" #userlogin="ngForm"  (ngSubmit)="userVerify()">
+        
+        <div class="form-group">
+    
+            <label for="name">Enter your Username</label>
+            <br>
+            <input type="text" class="form-control" name="usname" [(ngModel)]="user.usname" pattern="[a-z]{5}" required >
+            <!-- <small [class.d-none]="uname.valid || uname.touched">crerate username with 5 lowercase alphabets only</small> -->
+        </div>
+    <br>
+   
+    <div class="form-group">
+      
+        <label for="password">Password</label>
+        <br>
+        <input type="password" class="form-control" name="password" [(ngModel)]="user.password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}"  required>
+        
+     
+    </div>
+    
+    <br>
+    
+    <button class="btn btn-primary" [disabled]="userlogin.form.invalid">Login</button>
+    
+    </form>
+    
+    </div>
+    

@@ -1,0 +1,80 @@
+<div class="card-header">
+    <h3>Sign up</h3>
+    </div>
+    
+    
+    <div class="card-body">
+    
+    <form class="form col-md-6" #userlogin="ngForm"  (ngSubmit)="userVerif()">
+        
+        <div class="form-group">
+    
+            <label for="name">Enter your Username</label>
+            <br>
+            <input type="text" class="form-control" name="uname" [(ngModel)]="user.uname" #uname="ngModel" pattern="[a-z]{5}" [class.is-invalid]="uname.invalid && uname.touched" required >
+            <small [class.d-none]="uname.valid || uname.touched">crerate username with 5 lowercase alphabets only</small>
+        </div>
+    <br>
+    <div class="form-group">
+    
+        <label for="name">Enter your name</label>
+        <br>
+        <input type="text" class="form-control" name="name" [(ngModel)]="user.name" #name="ngModel" pattern="[A-Za-z]{3,50}" [class.is-invalid]="name.invalid && name.touched" required >
+        <small [class.d-none]="name.valid || name.touched">Enter valid characters</small>
+    </div>
+<br>
+<div class="form-group">
+    
+    <label for="name">Enter your phone number</label>
+    <br>
+    <input type="text" class="form-control" name="phone" [(ngModel)]="user.phone" #phone="ngModel" pattern="[0-9]{10}" [class.is-invalid]="phone.invalid && phone.touched" required >
+    <small [class.d-none]="phone.valid || phone.touched">Enter valid phone number</small>
+</div>
+<br>
+        
+        
+    
+        <div class="form-group">
+    
+            <label for="email">Email</label>
+            <br>
+            <input type="email" class="form-control" name="email" [(ngModel)]="user.email" #email="ngModel" [class.is-invalid]="email.invalid && email.touched"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+             <small [class.d-none]="email.valid || email.touched">Enter valid email</small>
+        </div>
+   
+<br>
+<div class="form-group">
+    
+    <label for="designation">your designation</label>
+    <br>
+    <input type="text" class="form-control" name="designation" [(ngModel)]="user.designation" #designation="ngModel" minlength="3" [class.is-invalid]="designation.invalid && designation.touched" required>
+     <small [class.d-none]="designation.valid || designation.touched">Enter valid designation</small>
+</div>
+
+<br>
+<div class="form-group">
+<label for="address">your address</label>
+    <br>
+    <input type="text" class="form-control" name="address" [(ngModel)]="user.address" #address="ngModel" minlength="8" [class.is-invalid]="address.invalid && address.touched" required>
+     <small [class.d-none]="address.valid || address.touched">Enter valid address</small>
+</div>
+
+<br>
+
+    <div class="form-group">
+      
+        <label for="password">Password</label>
+        <br>
+        <input type="password" class="form-control" name="password" [(ngModel)]="user.password" #password="ngModel" [class.is-invalid]="password.invalid && password.touched" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}"  required>
+        
+     <small [class.d-none]="password.valid || password.touched">Enter minimum 8 characters must contains one uppercase letter, one lowercase letter and one number</small>
+    </div>
+    
+    <br>
+    
+    <button class="btn btn-primary" [disabled]="userlogin.form.invalid">Signup</button>
+    
+    </form>
+    
+    </div>
+    

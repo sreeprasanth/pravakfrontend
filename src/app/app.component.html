@@ -1,0 +1,15 @@
+<div id="a">
+    <ul>
+        
+        <li><a routerLink="login" *ngIf="!_auth.loggedin()"   routerLinkActive="active">Login</a></li>
+        <li><a routerLink="signup" *ngIf="!_auth.loggedin()"   routerLinkActive="active">Signup</a></li>
+        
+        <li><a routerLink="" *ngIf="_auth.loggedin()" (click)="logoutuser()" >Logout</a></li>
+        <!-- <li><a href="about.asp">About</a></li> -->
+      </ul>
+      
+    
+      </div>
+<div class="a">
+<router-outlet></router-outlet>
+</div>
